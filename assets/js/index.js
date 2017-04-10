@@ -1,5 +1,6 @@
 var faviconUrl = location.search.split('favicon-url=')[1] ? location.search.split('favicon-url=')[1].split('&')[0] : null;
 var targetUrl = location.search.split('target-url=')[1] ? location.search.split('target-url=')[1].split('&')[0] : null;
+var iframeOption = location.search.split('iframe-option=')[1] ? location.search.split('iframe-option=')[1].split('&')[0] : null;
 
 if (faviconUrl) {
   var link = document.createElement('link');
@@ -13,5 +14,6 @@ if (targetUrl) {
   var iframe = document.createElement('iframe');
   iframe.src = targetUrl;
   iframe.frameborder='0';
-  document.body.appendChild(iframe);
+  if (iframeOption) document.body.appendChild(iframe);
+  else window.location = targetUrl;
 }
