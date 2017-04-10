@@ -5,7 +5,7 @@ var redirectionTimeout = location.search.split('redirection-timeout=')[1] ? pars
 
 // Redirection function
 function redirect(url) {
-    window.location = url;
+    //window.location = url;
 };
 
 
@@ -24,5 +24,5 @@ if (targetUrl) {
   if (iframeOption) document.body.appendChild(iframe);
     // IE9 and below does not support include additional params (e.g. targetUrl) 
     // to the function used by setTimeout 
-  else setTimeout(redirect,redirectionTimeout, targetUrl)
+  else setTimeout(redirect,redirectionTimeout, targetUrl);
 }
