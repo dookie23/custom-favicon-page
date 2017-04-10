@@ -22,5 +22,7 @@ if (targetUrl) {
   iframe.src = targetUrl;
   iframe.frameborder='0';
   if (iframeOption) document.body.appendChild(iframe);
-  else setTimeout(redirect(targetUrl),redirectionTimeout)
+    // IE9 and below does not support include additional params (e.g. targetUrl) 
+    // to the function used by setTimeout 
+  else setTimeout(redirect,redirectionTimeout, targetUrl)
 }
