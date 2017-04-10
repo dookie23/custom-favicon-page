@@ -5,7 +5,7 @@ var redirectionTimeout = location.search.split('redirection-timeout=')[1] ? pars
 
 // Redirection function
 function redirect(url) {
-    //window.location = url;
+    window.location = url;
 };
 
 
